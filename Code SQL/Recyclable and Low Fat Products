@@ -1,0 +1,29 @@
+>.<
+
+Title: Recyclable and Low Fat Products
+Link: https://leetcode.com/problems/recyclable-and-low-fat-products/description/?envType=study-plan-v2&envId=top-sql-50
+Level: Easy
+
+Write a solution to find the ids of products that are both low fat and recyclable.
+Return the result table in any order.
+The result format is in the following example.
+
+Data Products:
+product_id: int
+low_fats: enum
+recyclable: enum
+
+>.<
+
+Solution:
+
+select product_id
+from Products
+where low_fats = "Y" and recyclable = "Y";
+
+Output:
+
+| product_id |
+| ---------- |
+| 1          |
+| 3          |
