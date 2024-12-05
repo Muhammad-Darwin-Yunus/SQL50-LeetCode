@@ -1,0 +1,37 @@
+>.<
+
+Title: Students and Examinations
+Link: https://leetcode.com/problems/students-and-examinations/description/?envType=study-plan-v2&envId=top-sql-50
+Level: Easy
+
+Write a solution to find the number of times each student attended each exam.
+Return the result table ordered by student_id and subject_name.
+
+Data Students:
+student_id: int
+student_name: varchar
+
+Data Subjects:
+subject_name: varchar
+
+>.<
+
+Solution:
+
+select s.student_id,s.student_name,sub.subject_name,count(e.subject_name) as attended_exams
+from Students s
+cross join Subjects sub
+left join Examinations e on s.student_id = e.student_id and sub.subject_name = e.subject_name
+group by s.student_id,s.student_name,sub.subject_name
+order by s.student_id,sub.subject_name;
+
+Output:
+
+| student_id | student_name | subject_name | attended_exams |
+| ---------- | ------------ | ------------ | -------------- |
+| 1          | Alice        | Math         | 3              |
+| 1          | Alice        | Physics      | 2              |
+| 1          | Alice        | Programming  | 1              |
+| 2          | Bob          | Math         | 1              |
+| 2          | Bob          | Physics      | 0              |
+| 2          | Bob          | Programming  | 1              |
