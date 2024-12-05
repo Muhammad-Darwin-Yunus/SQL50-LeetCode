@@ -1,0 +1,30 @@
+>.<
+
+Title: Rising Temperature
+Link: https://leetcode.com/problems/rising-temperature/description/?envType=study-plan-v2&envId=top-sql-50
+Level: Easy
+
+Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+Return the result table in any order.
+
+Data Weather:
+id: int
+recordDate: date
+temperature: int
+
+>.<
+
+Solution:
+
+select w1.id
+from weather as w1
+inner join weather as w2
+on datediff(w1.recordDate,w2.recordDate) = 1
+and w1.temperature > w2.temperature;
+
+Output:
+
+| id |
+| -- |
+| 2  |
+| 4  |
