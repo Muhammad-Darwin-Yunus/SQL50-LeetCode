@@ -1,0 +1,30 @@
+>.<
+
+Title: Not Boring Movies
+Link: https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50
+Level: Easy
+
+Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
+Return the result table ordered by rating in descending order.
+
+Data Cinema:
+id: int
+movie: varchar
+description: varchar
+rating: float
+
+>.<
+
+Solution:
+
+select *
+from cinema
+where id %2 = 1 and not description = 'boring' 
+order by rating desc;
+
+Output:
+
+| id | movie      | description | rating |
+| -- | ---------- | ----------- | ------ |
+| 5  | House card | Interesting | 9.1    |
+| 1  | War        | great 3D    | 8.9    |
