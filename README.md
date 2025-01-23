@@ -1,6 +1,6 @@
 # SQL50-LeetCode Muhammad Darwin Yunus
 
-Welcome to the Leetcode SQL 50 Questions repository written by Muhammad Darwin Yunus! Here, I will be hosting solutions for SQL 50 from LeetCode. This repository contains SQL code for a web scraping project.
+Welcome to the Leetcode SQL 50 Questions repository written by Muhammad Darwin Yunus! Here, I will be hosting solutions for SQL 50 from LeetCode. 
 
 The SQL 50 test contains 3 levels, namely Easy, Medium, and Hard.
 
