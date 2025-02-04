@@ -1,0 +1,36 @@
+>.<
+
+Title: Average Selling Price
+Link: https://leetcode.com/problems/average-selling-price/description/?envType=study-plan-v2&envId=top-sql-50
+Level: Easy
+
+Write a solution to find the average selling price for each product.
+average_price should be rounded to 2 decimal places.
+If a product does not have any sold units, its average selling price is assumed to be 0.
+Return the result table in any order.
+
+Data Prices:
+product_id: int
+start_date: date
+end_date: date
+price: int
+
+Data UnitsSold:
+product_id: int
+purchase_date: date
+units: int
+
+>.<
+
+Solution:
+
+select p.product_id,ifnull(round(sum(p.price * u.units) / sum(units),2),0) average_price
+from Prices p
+left join UnitsSold u on p.product_id = u.product_id and purchase_date between start_date and end_date
+
+Output:
+
+| product_id | average_price |
+| ---------- | ------------- |
+| 1          | 6.96          |
+| 2          | 16.96         |
